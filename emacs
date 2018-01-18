@@ -13,7 +13,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (magit undo-tree))))
+ '(package-selected-packages (quote (## magit undo-tree)))
+ '(safe-local-variable-values (quote ((bhj-force-cleanup-buffer . t)))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -38,6 +39,13 @@
     ))
 (add-hook 'emacs-startup-hook' server-start-and-copy)
 (add-hook 'find-file-hooks 'flymake-find-file-hook)
+
+(add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
+(require 'yasnippet)
+(setq yas/prompt-functions
+   '(yas/dropdown-prompt yas/x-prompt yas/completing-prompt yas/ido-prompt yas/no-prompt))
+   (yas/global-mode 1)
+   (yas/minor-mode-on)
 
 (add-to-list 'load-path "~/.emacs.d/plugins/auto-complete")
 (add-to-list 'load-path "~/.emacs.d/plugins/fuzzy-el")
@@ -97,3 +105,24 @@
 ;;git-emacs集成
 ;;(add-to-list 'load-path "~/.emacs.d/plugins/git-emacs")
 ;;(require 'git-emacs)
+
+;;evil集成
+(add-to-list 'load-path "~/.emacs.d/plugins/evil")
+(require 'evil)
+(evil-mode 1)
+
+(setq evil-default-state 'emacs)
+(define-key evil-emacs-state-map (kbd "C-o") 'evil-execute-in-normal-state)
+; C-o按键调用vim功能（就是临时进入normal模式，然后自动回来）
+; 比如，你要到第一行，可以使用emacs的 M-<，也可以使用evil的C-o gg
+; 其中C-o是进入vim模式 gg是去第一行，命令之后自动还原emacs模式！ 
+(put 'upcase-region 'disabled nil)
+
+;; iimage mode
+;;(autoload 'iimage-mode "iimage" "Support Inline image minor mode." t)
+;;(autoload 'turn-on-iimage-mode "iimage" "Turn on Inline image minor mode." t)
+;;
+;;(add-hook 'org-mode-hook 'iimage-mode)   ; enable iimage-mode
+;;(add-to-list 'load-path  "~/.emacs.d/plugins/org-screenshot/")
+;;(require 'org-screenshot) 
+;;(global-set-key (kbd "C-i") 'org-screenshot)
