@@ -1,0 +1,4 @@
+/ssh:qsq:/sudo::/
+/tmp/#!ssh:qsq:!sudo::!#
+/ssh:qsq:/etc/postfix/main.cf
+/tmp/#!ssh:qsq:!etc!postfix!main.cf#

@@ -1,0 +1,12 @@
+/home/qishanqing/myscript/jenkins/template.xml
+/home/qishanqing/myscript/jenkins/#template.xml#
+/rsync_push/db/project.db
+/rsync_push/db/#project.db#
+/rsync_push/db/IPDIR/DIFFERENT.db
+/rsync_push/db/IPDIR/#DIFFERENT.db#
+/home/qishanqing/myscript/sh/svn-merged.sh
+/home/qishanqing/myscript/sh/#svn-merged.sh#
+/home/qishanqing/myscript/sh/progress.sh
+/home/qishanqing/myscript/sh/#progress.sh#
+/home/qishanqing/myscript/sh/trap.sh
+/home/qishanqing/myscript/sh/#trap.sh#
