@@ -6,14 +6,18 @@
 (require 'package)
 (add-to-list 'package-archives
 	     '("melpa" . "http://melpa.org/packages/"))
+;;	     '("marmalade" . "http://marmalade-repo.org/packages"))
 (package-initialize)
+
+(when (not package-archive-contents)
+    (package-refresh-contents))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (## magit undo-tree)))
+ '(package-selected-packages (quote (color-theme-solarized ## magit undo-tree)))
  '(safe-local-variable-values (quote ((bhj-force-cleanup-buffer . t)))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -77,6 +81,9 @@
 ;; 设置tab space
 (setq tab-width 4)
 
+;; 禁用下划线转义
+(setq-default org-use-sub-superscripts nil)
+
 (dolist (hook '(
 		eshell-mode-hook
 		help-mode-hook
@@ -95,9 +102,12 @@
 ;;(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 ;;(load-theme 'green-phosphor t) 
 (require 'color-theme)
+;;添加配色solarized
+(add-to-list 'custom-theme-load-path "~/.emacs.d/site-lisp/emacs-color-theme-solarized")
+(require 'color-theme-solarized)
 (setq color-theme-is-global t)
 (color-theme-initialize)
-(color-theme-comidia)
+;;(color-theme-comidia)
 
 (setq org-startup-indented t)
 (setq org-src-fontify-natively t)
@@ -126,3 +136,4 @@
 ;;(add-to-list 'load-path  "~/.emacs.d/plugins/org-screenshot/")
 ;;(require 'org-screenshot) 
 ;;(global-set-key (kbd "C-i") 'org-screenshot)
+
