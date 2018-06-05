@@ -17,7 +17,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (color-theme-solarized ## magit undo-tree)))
+ '(package-selected-packages (quote (neotree color-theme-solarized ## magit undo-tree)))
  '(safe-local-variable-values (quote ((bhj-force-cleanup-buffer . t)))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -137,3 +137,7 @@
 ;;(require 'org-screenshot) 
 ;;(global-set-key (kbd "C-i") 'org-screenshot)
 
+;;set windows numbering
+(add-to-list 'load-path "~/.emacs.d/plugins/window-numbering")
+(require 'window-numbering)
+(window-numbering-mode 1)
