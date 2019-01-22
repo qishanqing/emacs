@@ -107,7 +107,7 @@
 (require 'color-theme-solarized)
 (setq color-theme-is-global t)
 (color-theme-initialize)
-;;(color-theme-comidia)
+(color-theme-comidia)
 
 (setq org-startup-indented t)
 (setq org-src-fontify-natively t)
