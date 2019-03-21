@@ -103,8 +103,8 @@
 ;;(load-theme 'green-phosphor t) 
 (require 'color-theme)
 ;;添加配色solarized
-(add-to-list 'custom-theme-load-path "~/.emacs.d/site-lisp/emacs-color-theme-solarized")
-(require 'color-theme-solarized)
+;;(add-to-list 'custom-theme-load-path "~/.emacs.d/site-lisp/emacs-color-theme-solarized")
+(require 'color-theme)
 (setq color-theme-is-global t)
 (color-theme-initialize)
 (color-theme-comidia)
