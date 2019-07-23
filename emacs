@@ -1,4 +1,5 @@
 
+
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
@@ -73,7 +74,7 @@
 (setq ac-menu-height 12)
 
 ;; 高亮光标的当前行
-(global-hl-line-mode 1)
+;;(global-hl-line-mode 1)
 
 ;; 设置默认换行模式为“在窗口边缘自动换行”
 (toggle-truncate-lines t)
@@ -141,3 +142,11 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/window-numbering")
 (require 'window-numbering)
 (window-numbering-mode 1)
+
+;;代码格式化
+(defun indent-whole ()
+(interactive)
+(indent-region (point-min) (point-max))
+(message "format successfully"))
+;;绑定到F7键
+(global-set-key [f7] 'indent-whole)
