@@ -18,7 +18,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (neotree color-theme-solarized ## magit undo-tree)))
+ '(package-selected-packages
+   (quote
+    (pyenv-mode elpy neotree color-theme-solarized ## magit undo-tree)))
  '(safe-local-variable-values (quote ((bhj-force-cleanup-buffer . t)))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -150,3 +152,10 @@
 (message "format successfully"))
 ;;绑定到F7键
 (global-set-key [f7] 'indent-whole)
+
+;;集成python
+(require 'package)
+(add-to-list 'package-archives
+             '("elpy" . "https://jorgenschaefer.github.io/packages/"))
+(elpy-enable)
+;;(elpy-use-ipython)
