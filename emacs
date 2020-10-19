@@ -110,7 +110,7 @@
 (require 'color-theme)
 (setq color-theme-is-global t)
 (color-theme-initialize)
-(color-theme-comidia)
+(color-theme-classic)
 
 (setq org-startup-indented t)
 (setq org-src-fontify-natively t)
@@ -157,5 +157,11 @@
 (require 'package)
 (add-to-list 'package-archives
              '("elpy" . "https://jorgenschaefer.github.io/packages/"))
-(elpy-enable)
+;;(elpy-enable)
 ;;(elpy-use-ipython)
+
+;;去掉欢迎页面
+(setq inhibit-splash-screen t)
+
+
+
